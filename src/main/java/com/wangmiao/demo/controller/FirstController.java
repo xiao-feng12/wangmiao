@@ -19,6 +19,7 @@ public class FirstController {
 
     @Autowired
     private UserRepository userRepository;
+    //在运行的过程他会自动生成实例
 
     @RequestMapping("/")
     public String index(ModelMap map) {
@@ -26,8 +27,8 @@ public class FirstController {
         map.addAttribute("name", userName);
         map.addAttribute("bookTitle", bookTitle);
         // return模板文件的名称，对应src/main/resources/templates/welcome.html
-        User user = userRepository.getOne(1L);
-        map.addAttribute("userId",user.getuId());
+        User user = userRepository.findOne(1L);//
+        map.addAttribute("userId",user.getId());
         map.addAttribute("userName",user.getName());
         return "welcome";
     }
