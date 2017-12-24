@@ -40,17 +40,13 @@
             <scope>test</scope>
         </dependency>
 
-        <!--FreeMarker是一款模板引擎： 即一种基于模板和要改变的数据，-->
-        <!--并用来生成输出文本（HTML网页、电子邮件、配置文件、源代码等）的通用工具。-->
-        <!--它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。-->
+        <!--Thymeleaf是个XML/XHTML/HTML5模板引擎，可以用于Web与非Web应用。
+        由于thymeleaf框架已经包含了 web starter 所以不需要再引入 spring-boot-starter-web 了-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>
+
         <!--mysql 驱动依赖-->
         <dependency>
             <groupId>org.wisdom-framework</groupId>
