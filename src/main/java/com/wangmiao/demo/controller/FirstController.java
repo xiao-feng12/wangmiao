@@ -32,4 +32,11 @@ public class FirstController {
         return "welcome";
     }
 
+    @RequestMapping("/thymeleaf")
+    public String thymeleaf(ModelMap map) {
+        User user = userRepository.getOne(1L);
+        map.addAttribute("name",user.getName());
+        return "hello";
+    }
+
 }
