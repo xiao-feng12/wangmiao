@@ -1,6 +1,8 @@
 package com.wangmiao.demo.controller;
 
+import com.wangmiao.demo.dao.UserMapper;
 import com.wangmiao.demo.entity.User;
+import com.wangmiao.demo.pagemodel.res.UserRes;
 import com.wangmiao.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +22,9 @@ public class FirstController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserMapper userMapper;
+
     @RequestMapping("/")
     public String thymeleaf(ModelMap map) {
         // 加入一个属性，用来在模板中读取
@@ -27,6 +32,8 @@ public class FirstController {
         map.addAttribute("bookTitle", bookTitle);
         User user = userRepository.getOne(1L);
         map.addAttribute("name",user.getName());
+        UserRes userRes = userMapper.selectByUserId(1L);
+        map.addAttribute("mapperName",userRes.getName());
         return "hello";
     }
 
