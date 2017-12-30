@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学员基本信息</title>
+</head>
+<body>
+
+<form action="">
+    <fieldset>
+
+        1.姓名: <input type="text" size="30"><br>
+        <br/>
+        企业名称: <input type="text" size="30">若无企业，在此打勾<input type="radio"><br>
+        <br/>
+        2.地址(或企业):<input type="text" size="30"><br>
+        <br/>
+        联系电话: <input type="text" size="30"><br>
+        <br/>
+        电子信箱: <input type="text" size="30"><br>
+        <br/>
+        3.性别: <input type="radio" name="sex" value="男">男
+              <input type="radio" name="sex" value="女">女<br>
+        <br/>
+        4.年龄: <input type="text" size="10">岁<br>
+        <br/>
+        5.education_degree:<select name="education_degree">
+        <option value="文盲">文盲</option>
+        <option value="小学">小学</option>
+        <option value="初中">初中</option>
+        <option value="高中（中专）">高中（中专）</option>
+        <option value="大专">大专</option>
+        <option value="本科及以上">本科及以上</option>
+        </select>
+        <br/>
+        <br/>
+        5.文化程度：<br>
+        <input type="radio" name="education_degree0" value="文盲">文盲
+        <input type="radio" name="education_degree1" value="小学">小学
+        <input type="radio" name="education_degree2" value="初中">初中
+        <input type="radio" name="education_degree3" value="高中（中专）">高中（中专）
+        <input type="radio" name="education_degree4" value="大专">大专
+        <input type="radio" name="education_degree5" value="本科及以上">本科及以上
+        <br>
+        <br/>
+        6.具有基本计算能力？<br>
+        <input type="radio" name="judge1" value="yes">有
+        <input type="radio" name="judge2" value="no">无
+        <br/>
+    </fieldset>
+    <br/>
+    <p align="center">
+        <input type="button" name="button1" value="上一步" onclick="window.location.href='../templates/selectorg.html'">
+        <input type="button" name="button2" value="下一步" onclick="window.location.href='curren'">
+    </p>
+</form>
+</body>
+</html>

@@ -2,23 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>用户登录</title>
-    <meta http-equiv="content-type" content="application/json"/>
+    <meta http-equiv="content-type" charset="UTF-8" content="application/json">
+    </meta>
 </head>
 <body>
-<form action="#" th:action="@{/login}" method="post">
+<form action="/login" method="post">
     用户名:<br/>
     <input type="text" name="name" />
     <br/>
     口令:<br/>
-    <input type="text" name="keyword" />
+    <input type="text" name="keyword"/>
     <br/>
-    <input type="submit" value="Submit"/>
-</form>
 
-Hello,
-<p th:text="${name} + '.欢迎阅读《' + ${bookTitle} +'》'"></p>
-<p th:text="'userId:' + ${userId}"></p>
-<p th:text="'userName:' + ${userName}"></p>
+    <p align="center">
+        <input type="submit" value="Submit" />
+       <a href="organization/choose.html" >view</a>
+        <input th:type="button" th:name="botton1" value="下一步" onclick="window.location.href='organization/choose.html'"/>
+    </p>
+</form>
 
 </body>
 </html>

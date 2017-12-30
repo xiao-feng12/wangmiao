@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学院基本信息</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <fieldset>
+            17.在此之前的3个月中，您的平均销售输入估计是多少？<br>
+            上月   <input type="datetime-local" name="month1" size="5">月
+                    <input type="datetime-local" name="day1" size="5">日
+                    ¥ <input type="text" size="10" name="revenue"><br>
+            <br/>
+            上上月   <input type="datetime-local" name="month2" size="5">月
+                    <input type="datetime-local" name="day2" size="5">日
+                    ¥ <input type="text" size="10" name="revenue"><br>
+            <br/>
+            上上月的前一个月   <input type="datetime-local" name="month3" size="5">月
+                        <input type="datetime-local" name="day3" size="5">日
+                        ¥ <input type="text" size="10" name="revenue"><br>
+            <br/>
+            这些数字与当年的其他数字基本相同吗？<br>
+            <input type="radio" name="judge">是的<br>
+            <input type="radio" name="judge1">它们比通常的数字高<br>
+            <input type="radio" name="judge2">它们比通常的数字低<br>
+            <br/>
+        </fieldset>
+        <fieldset>
+            18.在面试前的几个月中，你的企业每日平均有多少顾客？<br>
+            上月   <input type="datetime-local" name="month4" size="5">月
+            <input type="datetime-local" name="day4" size="5">日
+            <input type="text" size="10" name="mount">人/日<br>
+            <br/>
+            这些数字与当年的其他数字基本相同吗？<br>
+            <input type="radio" name="judge">是的<br>
+            <input type="radio" name="judge1">它们比通常的数字高<br>
+            <input type="radio" name="judge2">它们比通常的数字低<br>
+            <br/>
+        </fieldset>
+    </fieldset>
+</form>
+    <p align="center">
+        <input type="button" name="button1" value="上一步">
+        <input type="button" name="button2" value="下一步">
+    </p>
+</body>
+</html>

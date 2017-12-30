@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:src="@{/static/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+
+
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<p th:text="'Hello ' + ${name} + '!'" >1</p>
+
+<p th:text="'your nickname is ' + ${names} + '。'" >2</p>
+
+<p th:text="'your mapperName is ' + ${mapperName} + '。'" >3</p>
+
+
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<p th:text="'欢迎学习 [' + ${bookTitle} + ']'" >3333</p>
+
+
+
+
+</body>
+<script th:src="@{/static/javascript/jquery.js}" type="text/javascript"></script>
+<script th:src="@{/static/javascript/jquery.min.js}" type="text/javascript"></script>
+</html>

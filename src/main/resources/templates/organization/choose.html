@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择机构</title>
+    <h1 align="center">请选择您所在的机构：</h1>
+</head>
+<body>
+<form action="">
+    <p align="center">
+        <select name="organization">
+            <option value="湘南学院">湘南学院</option>
+            <option value="北湖区">北湖区</option>
+            <option value="苏仙区">苏仙区</option>
+        </select>
+    </p>
+    <p align="center">
+        <input type="button" name="button1" value="上一步">
+        <input th:name="button2" type="button" value="下一步" onclick="window.location.href='../templates/student/information.html'">
+    </p>
+</form>
+
+</body>
+</html>

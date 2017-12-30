@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学员基本信息</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <fieldset>
+            10.请描述您现有的企业活动：<br>
+            <textarea rows="10" cols="30">
+            </textarea><br>
+            <br/>
+        </fieldset>
+        <fieldset>
+            11.企业行业：（根据情况可选多项）<br>
+            <br/>
+            <input type="checkbox" name="enterprise_type1" value="零售业">零售业
+            <input type="checkbox" name="enterprise_type2" value="批发业">批发业
+            <input type="checkbox" name="enterprise_type3" value="制造业">制造业
+            <input type="checkbox" name="enterprise_type4" value="服务业">服务业
+            <input type="checkbox" name="enterprise_type5" value="农业或与农业相关行业">农业或与农业相关行业
+            <br/>
+            <br/>
+            11.1您的企业营业收入有多大比例用于个人或家庭的开支？<br>
+            <input type="text" name="proportion" size="10">%<br>
+            <br/>
+            11.2每月扣除家庭开支之后，通常剩余多少金额？<br>
+            ¥<input type="text" name="surplus_amount" size="10">元<br>
+            <br/>
+        </fieldset>
+        <fieldset>
+            12.您在企业中做什么工作？<br>
+            <input type="radio" name="job1" value="业主/经理">业主/经理<br>
+            <input type="radio" name="job2" value="合伙人">合伙人<br>
+            <input type="radio" name="job3" value="雇员">雇员<br>
+            <br/>
+        </fieldset>
+        <fieldset>
+            13.企业是何时创办的：<br>
+            <input type="radio" name="time1" value="不到一年">不到一年<br>
+            <input type="radio" name="time2" value="一年以前">一年以前（创办企业时间：）<input type="date"><br>
+            <br/>
+        </fieldset>
+        <fieldset>
+            14.您的企业是否注册？<br>
+            <input type="radio" name="judge1">是
+            <input type="radio" name="judge2">否
+            <br/>
+        </fieldset>
+        <fieldset>
+            15.您对企业的将来有何打算？<br>
+            <input type="radio" name="thought1" value="维持或加强现在的企业">维持或加强现在的企业<br>
+            <input type="radio" name="thought2" value="除现有的企业之外，创办新的企业">除现有的企业之外，创办新的企业<br>
+            <input type="radio" name="thought3" value="创办其他行业的企业（代替现在的企业）">创办其他行业的企业（代替现在的企业）<br>
+            <input type="radio" name="thought4" value="不清楚">不清楚<br>
+            <br/>
+        </fieldset>
+        <fieldset>
+            16.您期望在创业培训班学到什么？<br>
+            <textarea rows="10" cols="30">
+            </textarea>
+            <br/>
+        </fieldset>
+    </fieldset>
+    <p align="center">
+        <input type="button" name="button1" value="上一步">
+        <input type="button" name="button2" value="下一步">
+    </p>
+</form>
+
+</body>
+</html>
