@@ -6,12 +6,15 @@ import com.wangmiao.demo.pojo.Page;
 import com.wangmiao.demo.repository.PileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * DateTime 2018-03-29 11:52
@@ -27,17 +30,35 @@ public class PileController {
     private PileMapper pileMapper;
 
     @RequestMapping("/pile")
-    public String index(ModelMap map) {
-        List<com.wangmiao.demo.pojo.Pile> pileList = save();
-        map.addAttribute("pileList", pileList);
+    public Object  index(@RequestParam(value="pageon",defaultValue="1")int pageon
+      , ModelAndView mv) {
+        int beginRow = (pageon - 1) * 10;
+        Page page=new Page(pageon);
+        page.setRowcountAndCompute(allCount());
 
-        Page page=new Page(1);
-        page.setRowcountAndCompute(10);
+        List<com.wangmiao.demo.pojo.Pile> pileList = save(beginRow);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("pileList", pileList);
+
         map.put("page", page);
-        return "pilePage";
+        mv.addAllObjects(map);
+        return mv;
     }
 
-    public List<com.wangmiao.demo.pojo.Pile> save() {
+    public List<com.wangmiao.demo.pojo.Pile> save(int beginRow) {
+        List<com.wangmiao.demo.pojo.Pile> piles = pileMapper.selectPilesByLimit(beginRow, 10);
+
+        for (com.wangmiao.demo.pojo.Pile p : piles){
+            System.out.println(p);
+        }
+
+        return piles;
+
+    }
+
+
+    public int allCount(){
         Long elect = 1L;
 
         Pile pile = new Pile();
@@ -48,17 +69,9 @@ public class PileController {
         pile.setSalesAmount(new BigDecimal(elect * 1.6));
         pile.setProfit(new BigDecimal(elect * (1.6-0.6)));
 
-        long id = pileRepository.save(pile).getId();
+        Long id = pileRepository.save(pile).getId();
         System.out.println(pileRepository.findOne(id));
-
-        List<com.wangmiao.demo.pojo.Pile> piles = pileMapper.selectPilesByLimit(0, 10);
-
-        for (com.wangmiao.demo.pojo.Pile p : piles){
-            System.out.println(p);
-        }
-
-        return piles;
-
+        return id.intValue();
     }
 
 }
