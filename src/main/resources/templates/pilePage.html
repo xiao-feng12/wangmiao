@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户列表</title>
+</head>
+<body>
+<div style="width: 1000px;" >
+    <table style="border-width: 1px;border-style: dashed;">
+        <tr>
+            <td>电桩编号</td>
+            <td>开始时间</td>
+            <td>结束时间</td>
+            <td>电量</td>
+            <td>成本</td>
+            <td>销售金额</td>
+            <td>纯利润</td>
+        </tr>
+        <p th:each="pile:${pileList}">
+            <tr>
+                <td th:text="${pile.id}"></td>
+                <td th:text="${pile.startTime}"></td>
+                <td th:text="${pile.endTime}"></td>
+                <td th:text="${pile.electricQuantity}"></td>
+                <td th:text="${pile.cost}"></td>
+                <td th:text="${pile.salesAmount}"></td>
+                <td th:text="${pile.profit}"></td>
+            </tr>
+        </p>
+    </table>
+    <div id="page" url="/pile" ></div>
+    <div th:replace="page :: page"></div>
+</div>
+</body>
+</html>

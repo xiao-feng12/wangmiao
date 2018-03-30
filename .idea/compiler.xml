@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="wangmiao" />
         <module name="wangmiao1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="wangmiao" target="1.8" />
       <module name="wangmiao1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
