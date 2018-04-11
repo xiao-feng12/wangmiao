@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <link th:href="@{/static/css/menu.css}" rel="stylesheet"/>
+    <link href="menu.css" rel="stylesheet"/>
 </head>
 <body>
-    <div th:id="menu">
+    <div id="menu">
         <ul>
             <li><a href="#" target="menu2">首页</a></li>
-            <li><a   href="#" target="menu2">机构简介</a></li>
+            <li><a   href="#" target="menu2">机构简介</a>
+                <ul>
+                    <li><a href="http://xnu.edu.cn" target="menu2">湘南学院</a></li>
+                    <li><a href="#" target="menu2">北湖区</a></li>
+                    <li><a href="#" target="menu2">苏仙区</a></li>
+                </ul>
+            </li>
             <li><a  href="#" target="menu2">登录</a></li>
         </ul>
     </div>
