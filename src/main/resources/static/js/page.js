@@ -45,6 +45,8 @@ var Pagination = {
     // change page
     Click: function() {
         Pagination.page = +this.innerHTML;
+        console.log(Pagination.page,this.innerHTML);
+        alert(Pagination.page);
         Pagination.Start();
     },
 

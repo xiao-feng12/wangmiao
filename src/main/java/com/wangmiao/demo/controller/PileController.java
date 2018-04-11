@@ -29,9 +29,26 @@ public class PileController {
     @Autowired
     private PileMapper pileMapper;
 
-    @RequestMapping("/pile")
-    public Object  index(@RequestParam(value="pageon",defaultValue="1")int pageon
+    @RequestMapping("/fenye")
+    public Object  fenye(@RequestParam(value="pageon",defaultValue="1")int pageon
       , ModelAndView mv) {
+        int beginRow = (pageon - 1) * 10;
+        Page page=new Page(pageon);
+        page.setRowcountAndCompute(allCount());
+
+        List<com.wangmiao.demo.pojo.Pile> pileList = save(beginRow);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("pileList", pileList);
+
+        map.put("page", page);
+        mv.addAllObjects(map);
+        return mv;
+    }
+
+    @RequestMapping("/pile")
+    public Object  pile(@RequestParam(value="pageon",defaultValue="1")int pageon
+            , ModelAndView mv) {
         int beginRow = (pageon - 1) * 10;
         Page page=new Page(pageon);
         page.setRowcountAndCompute(allCount());
