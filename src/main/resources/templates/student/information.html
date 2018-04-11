@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
 <head>
     <meta charset="UTF-8"/>
     <title>学员基本信息</title>
 </head>
 <body>
 
-<form action="">
+<form th:action="fillOne" method="post">
     <fieldset>
-
+        <fieldset>
         1.姓名: <input type="text" size="30"/><br/>
         <br/>
-        企业名称: <input type="text" size="30"/>若无企业，在此打勾<input type="radio"/><br/>
+        企业名称: <input type="text" size="30"/>
+            若无企业，在此打勾<input type="radio"/><br/>
         <br/>
         2.地址(或企业):<input type="text" size="30"/><br/>
         <br/>
@@ -35,23 +37,380 @@
         <br/>
         <br/>
         5.文化程度：<br/>
-        <input type="radio" name="education_degree0" value="文盲"/>文盲
-        <input type="radio" name="education_degree1" value="小学"/>小学
-        <input type="radio" name="education_degree2" value="初中"/>初中
-        <input type="radio" name="education_degree3" value="高中（中专）"/>高中（中专）
-        <input type="radio" name="education_degree4" value="大专"/>大专
-        <input type="radio" name="education_degree5" value="本科及以上"/>本科及以上
+        <input type="radio" name="education_degree" value="文盲"/>文盲
+        <input type="radio" name="education_degree" value="小学"/>小学
+        <input type="radio" name="education_degree" value="初中"/>初中
+        <input type="radio" name="education_degree" value="高中（中专）"/>高中（中专）
+        <input type="radio" name="education_degree" value="大专"/>大专
+        <input type="radio" name="education_degree" value="本科及以上"/>本科及以上
         <br/>
         <br/>
         6.具有基本计算能力？<br/>
-        <input type="radio" name="judge1" value="yes"/>有
-        <input type="radio" name="judge2" value="no"/>无
+        <input type="radio" name="judge" value="yes"/>有
+        <input type="radio" name="judge" value="no"/>无
         <br/>
+        </fieldset>
+        <fieldset>
+            7.目前您做什么什么工作:<br/>
+            <br/>
+            <input type="radio" name="job" value="公司名称"/>
+            在<input type="text"  name= "supplyCompanyName" size="30"/>公司作为一名领薪水的雇员<br/>
+            <input type="radio" name="job" value="企业名称"/>
+            从<input type="text"  name="supplyEnterpriseName" size="30"/>企业下岗<br/>
+            <input type="radio" name="job" value="务农"/>务农，主要供自己消费<br/>
+            <input type="radio" name="job" value="务农"/>务农，也出售商品<br/>
+            <input type="radio" name="job" value="经商"/>全日经商<br/>
+            <input type="radio" name="job" value="经商"/>部分时间经商<br/>
+            <input type="radio" name="job" value="其他"/>其他，请说明
+            <input type="text"  name="otherJob" size="30"/><br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            8.您是否有具体可行的企业想法？<br/>
+            <input type="radio" name="thought1" value="还没有"/>还没有<br/>
+            <input type="radio" name="thought1" value="有"/>有，请说明
+            <input type="text" size="30"/><br/>
+            <br/>
+            8.1请说明您为什么要创办企业：<br/>
+            <textarea rows="10" cols="30">
+            </textarea><br/>
+            <br/>
+            8.2您打算何时创办企业？<br/>
+            <input type="month" name="year"/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            9.您是否有您想创办企业所需的技术技能？<br/>
+            <input type="radio" name="thought2" value="没有"/>没有<br/>
+            <input type="radio" name="thought2" value="有"/>有，请说明
+            <input type="text" size="30"/><br/>
+            <br/>
+            </fieldset>
+        <fieldset>
+            10.请描述您现有的企业活动：<br/>
+            <textarea rows="10" cols="30">
+                </textarea><br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            11.企业行业：（根据情况可选多项）<br/>
+            <br/>
+            <input type="checkbox" name="enterprise_type" value="零售业"/>零售业
+            <input type="checkbox" name="enterprise_type" value="批发业"/>批发业
+            <input type="checkbox" name="enterprise_type" value="制造业"/>制造业
+            <input type="checkbox" name="enterprise_type" value="服务业"/>服务业
+            <input type="checkbox" name="enterprise_type" value="农业或与农业相关行业"/>农业或与农业相关行业
+            <br/>
+            <br/>
+            11.1您的企业营业收入有多大比例用于个人或家庭的开支？<br/>
+            <input type="text" name="proportion" size="10"/>%<br/>
+            <br/>
+            11.2每月扣除家庭开支之后，通常剩余多少金额？<br/>
+            ¥<input type="text" name="surplus_amount" size="10"/>元<br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            12.您在企业中做什么工作？<br/>
+            <input type="radio" name="job2" value="业主/经理"/>业主/经理<br/>
+            <input type="radio" name="job2" value="合伙人"/>合伙人<br/>
+            <input type="radio" name="job2" value="雇员"/>雇员<br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            13.企业是何时创办的：<br/>
+            <input type="radio" name="time" value="不到一年"/>不到一年<br/>
+            <input type="radio" name="time" value="一年以前"/>一年以前（创办企业时间：）
+            <input type="date"/><br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            14.您的企业是否注册？<br/>
+            <input type="radio" name="judge1"/>是
+            <input type="radio" name="judge1"/>否
+            <br/>
+        </fieldset>
+        <fieldset>
+            15.您对企业的将来有何打算？<br/>
+            <input type="radio" name="thought2" value="维持或加强现在的企业"/>维持或加强现在的企业<br/>
+            <input type="radio" name="thought2" value="除现有的企业之外，创办新的企业"/>除现有的企业之外，创办新的企业<br/>
+            <input type="radio" name="thought2" value="创办其他行业的企业（代替现在的企业）"/>创办其他行业的企业（代替现在的企业）<br/>
+            <input type="radio" name="thought2" value="不清楚"/>不清楚<br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            16.您期望在创业培训班学到什么？<br/>
+            <textarea rows="10" cols="30">
+                </textarea>
+            <br/>
+        </fieldset>
+        <fieldset>
+            17.在此之前的3个月中，您的平均销售输入估计是多少？<br/>
+            上月   <input type="datetime-local" name="month1" size="5"/>月
+            <input type="datetime-local" name="day1" size="5"/>日
+            ¥ <input type="text" size="10" name="revenue"/><br/>
+            <br/>
+            上上月   <input type="datetime-local" name="month2" size="5"/>月
+            <input type="datetime-local" name="day2" size="5"/>日
+            ¥ <input type="text" size="10" name="revenue"/><br/>
+            <br/>
+            上上月的前一个月   <input type="datetime-local" name="month3" size="5"/>月
+            <input type="datetime-local" name="day3" size="5"/>日
+            ¥ <input type="text" size="10" name="revenue"/><br/>
+            <br/>
+            这些数字与当年的其他数字基本相同吗？<br/>
+            <input type="radio" name="judge17"/>是的<br/>
+            <input type="radio" name="judge17"/>它们比通常的数字高<br/>
+            <input type="radio" name="judge17"/>它们比通常的数字低<br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            18.在面试前的几个月中，你的企业每日平均有多少顾客？<br/>
+            上月   <input type="datetime-local" name="month4" size="5"/>月
+            <input type="datetime-local" name="day4" size="5"/>日
+            <input type="text" size="10" name="mount"/>人/日<br/>
+            <br/>
+            这些数字与当年的其他数字基本相同吗？<br/>
+            <input type="radio" name="judge18"/>是的<br/>
+            <input type="radio" name="judge18"/>它们比通常的数字高<br/>
+            <input type="radio" name="judge18"/>它们比通常的数字低<br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            19.您估算一下您的资产现值是多少金额？<br/>
+            <br/>
+            机械/工具/设备：<input type="text" name="asset" size="30"/>
+            ¥<input type="text" size="30" name="money"/><br/>
+            <br/>
+            车辆/其他交通工具：<input type="text" name="asset" size="30"/>
+            ¥<input type="text" size="30" name="money"/><br/>
+            <br/>
+            属于企业的土地：<input type="text" name="asset" size="30"/>
+            ¥<input type="text" size="30" name="money"/><br/>
+            <br/>
+            属于企业的建筑：<input type="text" name="asset" size="30"/>
+            ¥<input type="text" size="30" name="money"/><br/>
+            <br/>
+            其他，请说明： <input type="text" name="asset" size="30"/>
+            ¥<input type="text" size="30" name="money"/><br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            20.您的企业提供多少工作岗位（包括业主本人）：
+            <input type="number" size="5"/>个<br/>
+            <br/>
+            21.请填写下面有关工人情况的表格：<br/>
+            <br/>
+            <table border="1">
+                <tr>
+                    <th>职工人数</th>
+                    <th>在企业的主要工作</th>
+                    <th>每周工作小时</th>
+                    <th>支付工资</th>
+                    <th>不支付工资</th>
+                    <th>如果是家庭成员，请打钩</th>
+                    <th>性别</th>
+                </tr>
+                <tr>
+                    <th>自身</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay1" value="是"/></td>
+                    <td><input type="radio" name="isPay1" value="否"/></td>
+                    <td> </td>
+                    <td>男<input type="radio" name="sex1" value="男"/>
+                        女<input type="radio" name="sex1" value="女"/></td>
+                </tr>
+                <tr>
+                    <th>1个工人</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay2" value="是"/></td>
+                    <td><input type="radio" name="isPay2" value="否"/></td>
+                    <td><input type="radio" name="isFamily"/></td>
+                    <td>男<input type="radio" name="sex2" value="男"/>
+                        女<input type="radio" name="sex2" value="女"/></td>
+                </tr>
+                <tr>
+                    <th>2个工人</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay3" value="是"/></td>
+                    <td><input type="radio" name="isPay3" value="否"/></td>
+                    <td><input type="radio" name="isFamily"/></td>
+                    <td>男<input type="radio" name="sex3" value="男"/>
+                        女<input type="radio" name="sex3" value="女"/></td>
+                </tr>
+                <tr>
+                    <th>3个工人</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay4" value="是"/></td>
+                    <td><input type="radio" name="isPay4" value="否"/></td>
+                    <td><input type="radio" name="isFamily"/></td>
+                    <td>男<input type="radio" name="sex4" value="男"/>
+                        女<input type="radio" name="sex4" value="女"/></td>
+                </tr>
+                <tr>
+                    <th>4个工人</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay5" value="是"/></td>
+                    <td><input type="radio" name="isPay5" value="否"/></td>
+                    <td><input type="radio" name="isFamily"/></td>
+                    <td>男<input type="radio" name="sex5" value="男"/>
+                        女<input type="radio" name="sex5" value="女"/></td>
+                </tr>
+                <tr>
+                    <th>5个工人</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay6" value="是"/></td>
+                    <td><input type="radio" name="isPay6" value="否"/></td>
+                    <td><input type="radio" name="isFamily"/></td>
+                    <td>男<input type="radio" name="sex7" value="男"/>
+                        女<input type="radio" name="sex7" value="女"/></td>
+                </tr>
+                <tr>
+                    <th>6个工人</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay8" value="是"/></td>
+                    <td><input type="radio" name="isPay8" value="否"/></td>
+                    <td><input type="radio" name="isFamily"/></td>
+                    <td>男<input type="radio" name="sex8" value="男"/>
+                        女<input type="radio" name="sex8" value="女"/></td>
+                </tr>
+                <tr>
+                    <th>7个工人</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay9" value="是"/></td>
+                    <td><input type="radio" name="isPay9" value="否"/></td>
+                    <td><input type="radio" name="isFamily"/></td>
+                    <td>男<input type="radio" name="sex9" value="男"/>
+                        女<input type="radio" name="sex9" value="女"/></td>
+                </tr>
+                <tr>
+                    <th>七人以上</th>
+                    <td><input type="text" name="mainJob"/></td>
+                    <td><input type="text" name="workTime"/></td>
+                    <td><input type="radio" name="isPay10" value="是"/></td>
+                    <td><input type="radio" name="isPay10" value="否"/></td>
+                    <td><input type="radio" name="isFamily"/></td>
+                    <td>男<input type="radio" name="sex10" value="男"/>
+                        女<input type="radio" name="sex10" value="女"/></td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            22.您对在您企业中的工作的人员的劳动条件和福利待遇做如何评价？（打勾）<br/>
+            <br/>
+            <table border="1">
+                <tr>
+                    <th>选项/程度</th>
+                    <th>好，无需改进</th>
+                    <th>不错，需要做小的改进</th>
+                    <th>不好，需要做大的改进</th>
+                    <th>差，不满意/工作没有做</th>
+                </tr>
+                <tr>
+                    <td>工人的工资水平</td>
+                    <td><input type="radio" name="degree" value="好，无需改进"/></td>
+                    <td><input type="radio" name="degree" value="不错，需要做小的改进"/></td>
+                    <td><input type="radio" name="degree" value="不好，需要做大的改进"/></td>
+                    <td><input type="radio" name="degree" value="差，不满意/工作没有做"/></td>
+                </tr>
+                <tr>
+                    <td>工人的劳动合同</td>
+                    <td><input type="radio" name="degree1" value="好，无需改进"/></td>
+                    <td><input type="radio" name="degree1" value="不错，需要做小的改进"/></td>
+                    <td><input type="radio" name="degree1" value="不好，需要做大的改进"/></td>
+                    <td><input type="radio" name="degree1" value="差，不满意/工作没有做"/></td>
+                </tr>
+                <tr>
+                    <td>参加社会保险</td>
+                    <td><input type="radio" name="degree2" value="好，无需改进"/></td>
+                    <td><input type="radio" name="degree2" value="不错，需要做小的改进"/></td>
+                    <td><input type="radio" name="degree2" value="不好，需要做大的改进"/></td>
+                    <td><input type="radio" name="degree2" value="差，不满意/工作没有做"/></td>
+                </tr>
+                <tr>
+                    <td>商业医疗保险或其他商业保险</td>
+                    <td><input type="radio" name="degree3" value="好，无需改进"/></td>
+                    <td><input type="radio" name="degree3" value="不错，需要做小的改进"/></td>
+                    <td><input type="radio" name="degree3" value="不好，需要做大的改进"/></td>
+                    <td><input type="radio" name="degree3" value="差，不满意/工作没有做"/></td>
+                </tr>
+                <tr>
+                    <td>雇员的年假安排</td>
+                    <td><input type="radio" name="degree4" value="好，无需改进"/></td>
+                    <td><input type="radio" name="degree4" value="不错，需要做小的改进"/></td>
+                    <td><input type="radio" name="degree4" value="不好，需要做大的改进"/></td>
+                    <td><input type="radio" name="degree4" value="差，不满意/工作没有做"/></td>
+                </tr>
+                <tr>
+                    <td>工人在企业决策中的意见参加</td>
+                    <td><input type="radio" name="degree5" value="好，无需改进"/></td>
+                    <td><input type="radio" name="degree5" value="不错，需要做小的改进"/></td>
+                    <td><input type="radio" name="degree5" value="不好，需要做大的改进"/></td>
+                    <td><input type="radio" name="degree5" value="差，不满意/工作没有做"/></td>
+                </tr>
+                <tr>
+                    <td>工人的培训和其他发展机会</td>
+                    <td><input type="radio" name="degree6" value="好，无需改进"/></td>
+                    <td><input type="radio" name="degree6" value="不错，需要做小的改进"/></td>
+                    <td><input type="radio" name="degree6" value="不好，需要做大的改进"/></td>
+                    <td><input type="radio" name="degree6" value="差，不满意/工作没有做"/></td>
+                </tr>
+                <tr>
+                    <td>其他利益，例如：<input type="text" name="other"/></td>
+                    <td><input type="radio" name="degree7" value="好，无需改进"/></td>
+                    <td><input type="radio" name="degree7" value="不错，需要做小的改进"/></td>
+                    <td><input type="radio" name="degree7" value="不好，需要做大的改进"/></td>
+                    <td><input type="radio" name="degree7" value="差，不满意/工作没有做"/></td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            23.您是否知道下列企业管理知识（请已经有企业的学员作答；没有企业的学员回答将如何应对这些问题）<br/>
+        </fieldset>
+        <fieldset>
+            在下面的的空白处简单写出答案<br/>
+        </fieldset>
+        <fieldset>
+            23.1请列出计算产品的总成本应考虑所有的不同成本。<br/>
+        </fieldset>
+        <fieldset>
+            <textarea rows="10" cols="50"></textarea>
+        </fieldset>
+        <fieldset>
+            23.2企业计划主要由哪几个部分构成？<br/>
+        </fieldset>
+        <fieldset>
+            <textarea rows="10" cols="50"></textarea>
+        </fieldset>
+        <fieldset>
+            23.3市场营销计划有哪几个部分？<br/>
+        </fieldset>
+        <fieldset>
+            <textarea rows="10" cols="50"></textarea>
+        </fieldset>
+        <fieldset>
+            23.4 请尽量列出你知道的职工的保险福利种类<br/>
+        </fieldset>
+        <fieldset>
+            <textarea rows="10" cols="50"></textarea>
+        </fieldset>
+        <fieldset>
+            23.5 安全和卫生的工作环境由什么构成？<br/>
+        </fieldset>
+        <fieldset>
+            <textarea rows="10" cols="50"></textarea>
+        </fieldset>
     </fieldset>
     <br/>
     <p align="center">
-        <input type="button" name="button1" value="上一步" />
-        <input type="button" name="button2" value="下一步" />
+        <input type="submit" value="提交"/>
     </p>
 </form>
 </body>

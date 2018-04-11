@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>学员基本信息</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <fieldset>
+            8.您是否有具体可行的企业想法？<br/>
+            <input type="radio" name="thought1" value="还没有">还没有<br/>
+            <input type="radio" name="thought1" value="有">有，请说明<input type="text" size="30"><br/>
+            <br/>
+            8.1请说明您为什么要创办企业：<br/>
+            <textarea rows="10" cols="30">
+            </textarea><br/>
+            <br/>
+            8.2您打算何时创办企业？<br/>
+            <input type="month" name="year">年<input type="date" name="month">月<br/>
+            <br/>
+        </fieldset>
+        <fieldset>
+            9.您是否有您想创办企业所需的技术技能？<br/>
+            <input type="radio" name="thought2" value="没有">没有<br/>
+            <input type="radio" name="thought2" value="有">有，请说明<input type="text" size="30"><br/>
+            <br/>
+        </fieldset>
+    </fieldset>
+    <p align="center">
+        <input type="button" name="button" value="上一步">
+        <input type="button" name="button" value="下一步">
+    </p>
+</form>
+</body>
+</html>

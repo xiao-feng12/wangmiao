@@ -1,5 +1,8 @@
 package com.wangmiao.demo.pagemodel.req;
 
+/**
+ * 用户登录回应
+ */
 public class LoginUserReq {
     private String name;
     private String keyword;

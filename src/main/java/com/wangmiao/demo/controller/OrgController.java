@@ -10,19 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class FillController {
-//    @Autowired
-//    private FillRepository fillRepository;
+public class OrgController {
 
     //要保存到数据库中所要使用的
     @Autowired
     private OrgRepository orgRepository;
-
-    //
-
-
-
-
     /**
      * select方法
      * RequestMapping

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link th:href="@{/static/css/menu.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div th:id="menu">
+        <ul>
+            <li><a href="#" target="menu2">首页</a></li>
+            <li><a   href="#" target="menu2">机构简介</a></li>
+            <li><a  href="#" target="menu2">登录</a></li>
+        </ul>
+    </div>
+    <div id="two">
+        <iframe style="height:100%; width:100%; border:0px; " name="menu2"></iframe>
+    </div>
+</body>
+</html>
