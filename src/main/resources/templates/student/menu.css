@@ -1,15 +1,14 @@
-body{}
-#menu{height:35px;width:300px;margin:auto;padding: 0px;border-bottom: 1px solid blue ;}
+body{margin: auto;}
+#menu{height:35px;width:1000px;margin:auto;padding: 0px;border-bottom: 1px solid blue ;background: #326329;}
 #menu ul{list-style:none;margin:0px;padding:0px;}
-#menu ul li{height:30px;width:80px;padding-right:2px;float:left;position:relative;}
+#menu ul li{height:30px;width:200px;padding-right:2px;float:left;position:relative}
 #menu ul li ul{position:absolute;display:none;}
 #menu ul li:hover ul{display:block;}
-#menu ul li ul li {border-bottom: 1px;}
-
-
-a{color: #0a0bff;text-decoration:none;text-align:center;
+#menu ul li ul li {border-bottom: 1px;background: #326329;}
+#one{height: 1000px; width: 1000px;margin: auto;}
+#two{height:35px;width:198px;margin:auto;background: #326329;}
+#three {width: 148px;height: 35px; background: #326329;float: left;margin: auto}
+#four{width: 148px;height: 35px;background: #326329;float: right;}
+a{color: #FFFFFF;text-decoration:none;text-align:center;
     height:28px;width:80px;display:block;}
-a:hover{color: #c2ff24;}
-#two{height:1000px;boder-bottom:2px solid red;width:300px;margin:auto;}
-#two ul{list-style:none;margin:0px;padding:0px;}
-#two ul li{float:left;height:30px;width:80px;}
+a:hover{color: #000000;}
