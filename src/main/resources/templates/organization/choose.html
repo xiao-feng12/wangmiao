@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>选择机构</title>
     <h1 align="center">请选择您所在的机构：</h1>
 </head>
 <body>
-<form action="">
+<form th:action="select" method="post">
     <p align="center">
         <select name="organization">
             <option value="湘南学院">湘南学院</option>
@@ -15,8 +15,8 @@
         </select>
     </p>
     <p align="center">
-        <input type="button" name="button1" value="上一步">
-        <input th:name="button2" type="button" value="下一步" onclick="window.location.href='../templates/student/information.html'">
+        <!--<input type="button" name="button1" value="上一步"/>-->
+        <input type="submit" value="下一步" />
     </p>
 </form>
 

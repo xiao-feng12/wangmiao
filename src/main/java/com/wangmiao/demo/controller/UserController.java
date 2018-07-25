@@ -20,15 +20,16 @@ public class UserController {
     //headers = "content-type=application/json就是说明他是用json这个格式来传递
     public String login(@ModelAttribute("form") LoginUserReq loginUserReq){
         User user = null;
-        if (loginUserReq.getName() != null && loginUserReq.getKeyword() != null){
-             user = userRepository.findByNameAndKeyword(loginUserReq.getName(), loginUserReq.getKeyword());
-        }
         System.out.println("name = " + loginUserReq.getName());
+        if (loginUserReq.getName() != null && loginUserReq.getKeyword() != null){
+            //查詢
+            user = userRepository.findByNameAndKeyword(loginUserReq.getName(), loginUserReq.getKeyword());
+        }
         System.out.println("keyword = " + loginUserReq.getKeyword());
         if (user == null){
             return "loginfail";
         } else {
-            return "loginsuccess";
+            return "organization/choose";
         }
     }
 
