@@ -1,5 +1,6 @@
 package spider;
 
+import com.alibaba.fastjson.JSON;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.Pipeline;
@@ -40,17 +41,16 @@ public class LaGouPipe implements Pipeline {
             fileWriter = new FileWriter(savepath, true);
 
             for (int j = 0; j < position.size(); j++) {
-                String builder = "{" +
-                        "position" + sep_before + position.get(j) + sep_after + "," +
-                        "salary" + sep_before + salary.get(j) + sep_after + "," +
-                        "workYear" + sep_before + workYear.get(j) + sep_after + "," +
-                        "address" + sep_before + address.get(j) + sep_after + "," +
-                        "district" + sep_before + district.get(j) + sep_after + "," +
-                        "createTime" + sep_before + createTime.get(j) + sep_after + "," +
-                        "companyName" + sep_before + companyName.get(j) + sep_after + "," +
-                        "discription" + sep_before + discription.get(j) + sep_after +
-                        "}";
-                fileWriter.write(builder);
+                LaGouModel model = new LaGouModel()
+                .setPosition(position.get(j))
+                        .setSalary(salary.get(j))
+                        .setWorkYear(workYear.get(j))
+                        .setAddress(address.get(j))
+                        .setDistrict(district.get(j))
+                        .setCreateTime(createTime.get(j))
+                        .setCompanyName(companyName.get(j))
+                        .setDiscription(discription.get(j));
+                fileWriter.write(JSON.toJSONString(model));
                 fileWriter.write("\r\n");
             }
         } catch (IOException e) {

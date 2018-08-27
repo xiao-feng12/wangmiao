@@ -7,6 +7,7 @@ import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.model.HttpRequestBody;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.JsonPathSelector;
+import us.codecraft.webmagic.utils.HttpConstant;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,12 +45,12 @@ public class LaGouSpider implements PageProcessor {
 
     @Override
     public void process(Page page) {
-        flag = processCity(page, "北京", flag, 30);
-        mark = processCity(page, "天津", mark, 9);
-        sun = processCity(page, "成都", sun, 1);
-        tr = processCity(page, "大连", tr, 1);
-        ty = processCity(page, "沈阳", ty, 1);
-        sub = processCity(page, "西安", sub, 1);
+//        flag = processCity(page, "北京", flag, 30);
+//        mark = processCity(page, "天津", mark, 9);
+        sun = processCity(page, "成都", sun, 9);
+//        tr = processCity(page, "大连", tr, 1);
+//        ty = processCity(page, "沈阳", ty, 1);
+//        sub = processCity(page, "西安", sub, 1);
 
         page.putField("positionname", new JsonPathSelector("$.content.positionResult.result[*].positionName").selectList(page.getRawText()));
         page.putField("workYear", new JsonPathSelector("$.content.positionResult.result[*].workYear").selectList(page.getRawText()));
@@ -82,6 +83,7 @@ public class LaGouSpider implements PageProcessor {
                 map.put("kd", "java");
 
                 requests[i] = new Request(url);
+                requests[i].setMethod(HttpConstant.Method.POST);
                 requests[i].setRequestBody(HttpRequestBody.form(map, "utf-8"));
                 page.addTargetRequest(requests[i]);
             }
@@ -95,7 +97,8 @@ public class LaGouSpider implements PageProcessor {
     public static void main(String[] args) {
         Spider.create(new LaGouSpider())
                 .addPipeline(new LaGouPipe())
-                .addUrl("https://www.lagou.com/jobs/positionAjax.json?px=default&city=北京&needAddtionalResult=false&isSchoolJob=0")
+                .addUrl("https://www.lagou.com/jobs/positionAjax.json?px=default&city=成都&needAddtionalResult=false&isSchoolJob=0")
+//                .addUrl("https://www.lagou.com/jobs/list_java")
                 .thread(2)
                 .run();
     }
